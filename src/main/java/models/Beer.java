@@ -1,29 +1,32 @@
 package models;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
-/**
- * Created by Guest on 1/9/18.
- */
+
 public class Beer {
     private String name;
     private String brewer;
     private String type;
-    private String ABV;
-    private String IBU;
+    private String abv;
+    private String ibu;
     private Map<String, String> comments = new HashMap<>();
+    private static ArrayList<Beer> instances = new ArrayList<>();
+
 
     public Beer(String name, String brewer, String type, String ABV, String IBU) {
         this.name = name;
         this.brewer = brewer;
         this.type = type;
-        this.ABV = ABV;
-        this.IBU = IBU;
-
+        this.abv = ABV;
+        this.ibu = IBU;
+        instances.add(this);
 
 
     }
+
 
     public String getName() {
         return name;
@@ -37,12 +40,12 @@ public class Beer {
         return type;
     }
 
-    public String getABV() {
-        return ABV;
+    public String getAbv() {
+        return abv;
     }
 
-    public String getIBU() {
-        return IBU;
+    public String getIbu() {
+        return ibu;
     }
 
     public Map<String, String> getComments() {
@@ -52,5 +55,9 @@ public class Beer {
     public void setComments(String name, String comment) {
         comments.put(name, comment);
 
+    }
+
+    public static ArrayList getAll() {
+        return instances;
     }
 }

@@ -43,13 +43,13 @@ public class BeerTest {
     @Test
     public void getABV_returnsABV_ABV() throws Exception {
         Beer testBeer = setUpNewBeer();
-        assertEquals("6.3", testBeer.getABV());
+        assertEquals("6.3", testBeer.getAbv());
     }
 
     @Test
     public void getIBU_returnsIBU_IBU() throws Exception {
         Beer testBeer = setUpNewBeer();
-        assertEquals("45", testBeer.getIBU());
+        assertEquals("45", testBeer.getIbu());
     }
 
     @Test

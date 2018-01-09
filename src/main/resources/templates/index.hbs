@@ -1,0 +1,28 @@
+
+{{#partial "content"}}
+
+    <h1>On Tap Beers!</h1>
+
+    {{#if beers}}
+        <h3>Check out our Beers on tap!</h3>
+
+        <ul>
+        {{#each beers }}
+            <li>{{name}} {{type}} by {{brewer}} ABV: {{abv}} % IBU: {{ibu}} </li>
+            {{#if this.comments}}
+                <ul>
+                    {{#each this.comments}}
+                        <li>{{key}}"{{this}}" -abraham lincoln, probably</li>
+                    {{/each}}
+                </ul>
+            {{/if}}
+        {{/each}}
+        </ul>
+
+
+    {{else}}
+        <p>Sorry, no beers!</p>
+    {{/if}}
+{{/partial}}
+
+{{> layout.hbs}}
